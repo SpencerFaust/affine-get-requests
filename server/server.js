@@ -6,7 +6,9 @@ app.listen(PORT, () => {                        //This line of code is what keep
     console.log('Running on port ' + PORT);
 });
 
-app.get('/quotes', (req, res) => {              //.get only accepts get requests as opposed to .use which accepts all requests.
+app.use(express.static('server/public'));
+
+app.get(PORT, (req, res) => {
     res.send(quotes_data);
 });
 
